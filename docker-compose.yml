@@ -1,0 +1,53 @@
+version: '3.7'
+
+
+volumes:
+  mysqldb:
+    driver: local
+  mysqlfiles:
+    driver: local
+  mudules:
+    driver: local
+  profiles:
+    driver: local
+  themes:
+    driver: local
+  sites:
+    driver: local
+
+services:
+
+  mysqldb:
+    image: osvmysql:01
+    container_name: osv_mysql 
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: Samsung1234
+      MYSQL_USER: 'oscar'
+      MYSQL_PASSWORD: Samsung1234
+      MYSQL_USER: 'userdrupal'
+      MYSQL_PASSWORD: Samsung1234
+      MYSQL_DATABASE: 'drupal'
+    volumes: 
+      - mysqldb:/var/lib/mysql
+      - mysqlfiles:/etc/mysql
+
+
+  drupalapp:
+    image: drupal:8-apache
+    container_name: osv_drupal
+    restart: always
+    ports: 
+      - '8081:80'
+#    depends_on: 
+#      - mysqldb
+    volumes: 
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
+
+  
