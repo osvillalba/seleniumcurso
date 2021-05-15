@@ -20,13 +20,13 @@ public class spotifyTest {
        // driver.findElement(By.xpath("//a[@href='https://www.spotify.com/ar/signup/']")).click();
        //driver.findElement(By.xpath("//*[@href='Introduce tu correo electrónico.']")).sendKeys("test@test.com");
        //driver.findElement(By.xpath("*//input[@name='email']")).sendKeys("gisela.test@gmail.com");
-        //driver.findElement(By.xpath("//*[@placeholder='Introduce tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
-        //driver.findElement(By.xpath("//*[@placeholder='Vuelve a introducir tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
-        //driver.findElement(By.xpath("//*[@placeholder='Crea una contraseña.']")).sendKeys("holamundo");
+        driver.findElement(By.xpath("//*[@placeholder='Introduce tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
+        driver.findElement(By.xpath("//*[@placeholder='Vuelve a introducir tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
+        driver.findElement(By.xpath("//*[@placeholder='Crea una contraseña.']")).sendKeys("holamundo");
 
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector("a[href='https://www.spotify.com/ar/signup/']")).click();
-        driver.findElement(By.cssSelector("input[placeholder='Introduce tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
+        //Thread.sleep(2000);
+        //driver.findElement(By.cssSelector("a[href='https://www.spotify.com/ar/signup/']")).click();
+        //driver.findElement(By.cssSelector("input[placeholder='Introduce tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
 
 
 
