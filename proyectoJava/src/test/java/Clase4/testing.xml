@@ -1,8 +1,11 @@
 <suite name ="Clase 4">
 
+    <parameter name="tagName" value ="h1"></parameter>
+    <parameter name="username" value ="testing@qa.com"></parameter>
+    <parameter name="password" value ="holamundo123"></parameter>
+
     <test name = "Ejercicos Testing">
         <classes>
-            <class name="Clase4.NotationsTest"></class>
             <class name="Clase4.SpotifyWithTestingTest"></class>
 
 
