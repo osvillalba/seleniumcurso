@@ -1,0 +1,12 @@
+<suite name ="Clase 4">
+
+    <test name = "Ejercicos Testing">
+        <classes>
+            <class name="Clase4.NotationsTest"></class>
+            <class name="Clase4.SpotifyWithTestingTest"></class>
+
+
+        </classes>
+    </test>
+
+</suite>

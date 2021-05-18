@@ -18,15 +18,17 @@ public class NotationsTest {
         System.out.println("Se invoca @BeforeMethod");
     };
 
-    @Test
+    @Test (priority = 2)
     public void test1(){
         System.out.println("Se ejecuta el Test 1 !!!");
     }
-    @Test
+
+    @Test (priority = 1)
     public void test2(){
         System.out.println("Se ejecuta el Test 2 !!!");
     }
-    @Test
+
+    @Test (priority = 0)
     public void test3(){
         System.out.println("Se ejecuta el Test 3 !!!");
     }
