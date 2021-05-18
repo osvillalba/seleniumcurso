@@ -1,1 +1,4 @@
 C:\Users\gios\IdeaProjects\proyectoJava\target
+.gitignore
+
+../../target/test-classes/Clase4/NotationsTest.class
