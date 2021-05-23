@@ -4,10 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.List;
 
@@ -23,36 +20,12 @@ public class SpotifyWithTestingTest {
         //driver.get(" https://www.spotify.com/ar/signup/");
     }
 
-    @Test
-    public void registrationTest() throws InterruptedException {
-
-        driver.get(" https://www.spotify.com/ar/signup/");
-
-        //Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@placeholder='Introduce tu correo electrónico.']")).sendKeys(" test@test.com ");
-        driver.findElement(By.xpath("//*[@placeholder='Vuelve a introducir tu correo electrónico.']")).sendKeys(" test@test.com ");
-        driver.findElement(By.xpath("//*[@placeholder='Crea una contraseña.']")).sendKeys(" holamundo ");
-        driver.findElement(By.xpath("//*[@placeholder='Introduce un nombre de perfil.']")).sendKeys(" Test ");
 
 
-    }
-    @Test
-    public void registrationTest2() throws InterruptedException {
-
-        driver.get(" https://www.spotify.com/ar/signup/");
-
-        //Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@placeholder='Introduce tu correo electrónico.']")).sendKeys(" test2@test.com ");
-        driver.findElement(By.xpath("//*[@placeholder='Vuelve a introducir tu correo electrónico.']")).sendKeys(" test2@test.com ");
-        driver.findElement(By.xpath("//*[@placeholder='Crea una contraseña.']")).sendKeys(" holamundo ");
-        driver.findElement(By.xpath("//*[@placeholder='Introduce un nombre de perfil.']")).sendKeys(" Test2 ");
-
-
-    }
 
     @Test
     @Parameters({"tagName"})
-    public void parametersFromTestingXML(String tagNameParameter) throws InterruptedException {
+    public void parametersFromTestingXML(@Optional("a") String tagNameParameter) throws InterruptedException {
         Thread.sleep(2000);
         System.out.println("Se van imprimir todos los " + tagNameParameter);
         List<WebElement> tagElementList = driver.findElements(By.tagName(tagNameParameter));
@@ -61,14 +34,19 @@ public class SpotifyWithTestingTest {
     }
 
     }
- /*   @Test
-    public void cssSelectorByPlaceHolderTest() throws InterruptedException {
+    @Test
+    @Parameters({"username"})
+    public void cssSelectorByPlaceHolderTest(@Optional("qa@qa.com") String testEmail) throws InterruptedException {
 
-        Thread.sleep(3000);
-        driver.findElement(By.cssSelector("a[href='https://www.spotify.com/ar/signup/']")).click();
-        driver.findElement(By.cssSelector("input[placeholder='Introduce tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
 
-    }*/
+        //driver.findElement(By.xpath("*//input[@name='email']")).sendKeys("testing@qa.com");
+        //driver.findElement(By.cssSelector("a[href='https://www.spotify.com/ar/signup/']")).click();
+        //driver.findElement(By.cssSelector("input[placeholder='Introduce tu correo electrónico.']")).sendKeys("gisela.test@gmail.com");
+        driver.findElement(By.xpath("//a[@href='https://www.spotify.com/ar/signup/']")).click();
+        driver.findElement(By.xpath("//input[@placeholder='Introduce tu correo electrónico.']")).sendKeys("test@abd.com ");
+
+    }
+
     @AfterMethod
     public void closeDriver() throws InterruptedException {
         Thread.sleep(4000);
